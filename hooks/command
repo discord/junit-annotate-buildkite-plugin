@@ -49,7 +49,7 @@ if grep -q "<details>" "$annotation_path"; then
       echo "--- :warning: Failures too large to annotate"
       msg="The failures are too large to create a build annotation. Please inspect the failed JUnit artifacts manually."
       echo "$msg"
-      cat "$msg" | buildkite-agent annotate --context junit --style error
+      echo "$msg" | buildkite-agent annotate --context junit --style error
       exit 0
   fi
 
